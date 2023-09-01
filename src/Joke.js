@@ -6,21 +6,28 @@ import "./Joke.css";
 export default function Joke(joke) {
   const { id, vote, votes, text } = joke;
 
-  /*   const clickManage = (id, icm) => {
-    vote(id, icm);
-  }; */
+  // onClick={(id) => vote(id, -1)}>
+  const clickManagedown = (e) => {
+    console.log("event", e);
+    vote(id, -1);
+  };
+
+  const clickManage = (e) => {
+    console.log("event", e);
+    vote(id, 1);
+  };
   return (
     <div className="Joke">
       <div className="Joke-votearea">
-        <button onClick={() => vote(id, +1)}>
+        <button onClick={clickManage} inc="1">
           <i className="fas fa-thumbs-up" />
         </button>
 
-        <button onClick={() => vote(id, -1)}>
+        <button onClick={clickManagedown}>
           <i className="fas fa-thumbs-down" />
         </button>
 
-        {votes}
+        {votes >= 0 ? `${votes}` : "0"}
       </div>
 
       <div className="Joke-text">{text}</div>

@@ -15,11 +15,12 @@ export default async function getjokes(num) {
     } */
     //console.log("res", res.data);
     let joke = res.data;
-    console.log("joke: ", joke);
-    joke = { ...joke, vote: "", votes: "0" };
+    //console.log("joke: ", joke);
+    joke = { ...joke, vote: "", votes: 0 };
+    //jokes[id] = joke ;
     jokes.push(joke);
     sw++;
   }
-  console.log("jokes in side getjokes: ", jokes);
+  //console.log("jokes in side getjokes: ", jokes);
   return jokes;
 }

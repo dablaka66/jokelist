@@ -1,6 +1,7 @@
 {
   "name": "icanhazdadjokes",
   "version": "0.1.0",
+  "homepage": "https://github.com/dablaka66/jokelist.git",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-free": "*",
@@ -15,6 +16,9 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+          
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
@@ -33,5 +37,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^6.0.0",
+    "@babel/plugin-proposal-private-property-in-object": ""
   }
 }
